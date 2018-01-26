@@ -1,2 +1,2 @@
-# Cameron is a great person
-# Not so with Scott
+# Cameron is *not* a great person
+# Scott follows suit
