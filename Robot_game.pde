@@ -12,13 +12,14 @@ void setup() {
   background(255, 204, 0);
   frameRate(60);
   animation1 = new Animation("Robot/Lightning", 5, 150);
-  animation2 = new Animation("Lightning/Lightning",300, 70);
+  animation2 = new Animation("Lightning/Lightning",200, 70);
   ypos = height * 0.25;
   translate(width/2, height/2);
   texture = loadImage("Metal.png");
   texture.resize(dim,dim);
   for(int i=0;i<test.length;i++){
     test[i] = new platform(i*dim,height-dim,texture);
+    aBullet =new Bullet();
   }
   background = loadImage("2.png");
   background.resize(1920, 1280);
@@ -31,6 +32,8 @@ void draw() {
   for(int i=0;i<test.length;i++){
     test[i].show();
     test[i].collission(lightning);
+    aBullet.simulate();
+    aBullet.show();
   }
   animation1.display(robot.xpos, robot.ypos);
   animation2.display(lightning.xpos, lightning.ypos);
